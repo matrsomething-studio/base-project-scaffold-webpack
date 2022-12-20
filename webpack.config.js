@@ -9,7 +9,7 @@ const HandlebarsLayouts = require('handlebars-layouts');
 module.exports = {
     entry: './src/scripts/main.js',
     output: {
-        filename: 'assets/built/main.built.js',
+        filename: 'assets/built/scripts/main.built.js',
         path: path.resolve(__dirname, './dist')
     },
     mode: 'none',
@@ -37,7 +37,7 @@ module.exports = {
     plugins: [
         new TerserPlugin(),
         new MiniCssExtractPlugin({
-            filename: 'styles.[contenthash].css'
+            filename: 'assets/built/styles/main.built.css'
         }),
         new CopyPlugin ({
             patterns: [
