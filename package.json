@@ -7,7 +7,7 @@
 		"serve": "npm run preview && cd dist/ && python -m SimpleHTTPServer 9090",
 		"commit-checkpoint": "git add . && git commit -m 'dev: checkpoint' && git push",
 		"clean": "rm -rf dist/*",
-		"build": "webpack",
+		"build": "npm run clean && webpack",
 		"watch": ""
 	},
 	"keywords": [],
