@@ -1,4 +1,8 @@
+// Path
 const path = require('path');
+
+
+// Plugins
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
@@ -6,6 +10,7 @@ const HandlebarsPlugin = require('handlebars-webpack-plugin');
 const HandlebarsLayouts = require('handlebars-layouts');
 
 
+// Config
 module.exports = {
     entry: './src/scripts/main.js',
     output: {
@@ -14,12 +19,11 @@ module.exports = {
     },
     mode: 'none',
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.css$/,
                 use: [
                     // 'style-loader', 
-                    MiniCssExtractPlugin.loader, 
+                    MiniCssExtractPlugin.loader,
                     'css-loader'
                 ]
             },
@@ -27,7 +31,7 @@ module.exports = {
                 test: /\.scss$/,
                 use: [
                     // 'style-loader', 
-                    MiniCssExtractPlugin.loader, 
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader' // envoked top > botton
                 ]
@@ -39,14 +43,15 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'assets/built/styles/main.built.css'
         }),
-        new CopyPlugin ({
-            patterns: [
-                { from: './assets', to: './' },
-            ]
+        new CopyPlugin({
+            patterns: [{
+                from: './assets',
+                to: './'
+            }, ]
         }),
         new HandlebarsPlugin({
             entry: path.join(process.cwd(), 'src', 'hbs', 'index*.{html,hbs}'),
-            output: path.join(process.cwd(), 'dist', '[name].php'),
+            output: path.join(process.cwd(), 'dist', '[name].html'),
             data: require('./data/config.json'),
             partials: [
                 path.join(process.cwd(), 'src', 'hbs', '*', '*', '*.hbs')
@@ -54,7 +59,7 @@ module.exports = {
             helpers: {
                 projectHelpers: path.join(process.cwd(), 'app', 'helpers', '*.helper.js')
             },
-            onBeforeSetup: function (Handlebars) {
+            onBeforeSetup: function(Handlebars) {
                 Handlebars.registerHelper(HandlebarsLayouts(Handlebars));
             }
         })
