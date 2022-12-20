@@ -1,0 +1,26 @@
+{
+	"name": "project-name-goes-here",
+	"description": "The PROJECT-NAME-GOES-HERE project.",
+	"version": "1.0.0",
+	"scripts": {
+		"preview": "open http://localhost:9090/",
+		"serve": "npm run preview && cd dist/ && python -m SimpleHTTPServer 9090",
+		"commit-checkpoint": "git add . && git commit -m 'dev: checkpoint' && git push",
+		"clean": "rm -rf dist/*",
+		"build": "webpack",
+		"watch": ""
+	},
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+	"registry": "https://registry.npmjs.org/",
+	"devDependencies": {
+        "css-loader": "^6.7.2",
+        "mini-css-extract-plugin": "^2.7.0",
+        "sass": "^1.56.1",
+        "sass-loader": "^13.2.0",
+        "style-loader": "^3.3.1",
+        "webpack": "^5.75.0",
+        "webpack-cli": "^4.10.0"
+      }
+}
