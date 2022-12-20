@@ -56,6 +56,9 @@ module.exports = {
             },
             onBeforeSetup: function (Handlebars) {
                 Handlebars.registerHelper(HandlebarsLayouts(Handlebars));
+            },
+            onBeforeRender: function (Handlebars, data, filename) {
+                console.dir(data);
             }
         })
     ]
