@@ -59,11 +59,4 @@ Bootstrap is included however only the grid component is currently utilized in o
 - See package.json
 
 ## Build System
-Project uses Gulp (https://gulpjs.com/) to generate tasks for building.
-
-**Tasks:**
-
-* `gulp html`: Collects all `.hbs` files in `src` and complies them using `config.json` from `data/` for build settings into `dist/` as HTML
-* `gulp js`: Collects all `.js` files in `src` and complies them into `dist/` as built JS
-* `gulp css`: Collects all `.scss` files in `src` and complies them into `dist/` as built CSS
-* `gulp assets`: Collects all asset files in `assets` and moves them into `dist/` as built `assets`
+TBD
