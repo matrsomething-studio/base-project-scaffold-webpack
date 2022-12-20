@@ -3,6 +3,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const HandlebarsPlugin = require('handlebars-webpack-plugin');
+const HandlebarsLayouts = require('handlebars-layouts');
+
 
 module.exports = {
     entry: './src/scripts/main.js',
@@ -45,9 +47,15 @@ module.exports = {
         new HandlebarsPlugin({
             entry: path.join(process.cwd(), 'src', 'hbs', 'index*.{html,hbs}'),
             output: path.join(process.cwd(), 'dist', '[name].php'),
+            data: require('./data/config.json'),
+            partials: [
+                path.join(process.cwd(), 'src', 'hbs', '*', '*', '*.hbs')
+            ],
             helpers: {
-                nameOfHbsHelper: Function.prototype,
-                projectHelpers: path.join(process.cwd(), 'src', 'helpers', '*.helper.js')
+                projectHelpers: path.join(process.cwd(), 'app', 'helpers', '*.helper.js')
+            },
+            onBeforeSetup: function (Handlebars) {
+                Handlebars.registerHelper(HandlebarsLayouts(Handlebars));
             }
         })
     ]
