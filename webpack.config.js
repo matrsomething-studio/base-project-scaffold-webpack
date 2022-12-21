@@ -16,11 +16,6 @@ module.exports = {
         filename: 'assets/built/scripts/main.built.js',
         path: path.resolve(__dirname, './dist')
     },
-    devServer: {
-        static: path.resolve(__dirname, 'dist'),
-        port: 8080,
-        hot: true
-    },
     mode: 'production',
     module: {
         rules: [{
