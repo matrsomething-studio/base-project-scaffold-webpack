@@ -3,9 +3,9 @@
 	"description": "The PROJECT-NAME-GOES-HERE project.",
 	"version": "1.0.0",
 	"scripts": {
+		"build": "npm run clean && webpack",
 		"commit-checkpoint": "git add . && git commit -m 'dev: checkpoint' && git push",
 		"clean": "rm -rf dist/*",
-		"build": "npm run clean && webpack",
 		"serve": "webpack serve --mode development && open http://localhost:8080/"
 	},
 	"keywords": [],
@@ -29,7 +29,8 @@
 		"webpack-dev-server": "3.11.0"
 	},
 	"dependencies": {
-		"bootstrap": "^4.4.1",
-		"imagesloaded": "^4.1.4"
+		"bootstrap": "^5.2.3",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
 	}
 }

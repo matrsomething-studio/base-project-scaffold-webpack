@@ -4,8 +4,12 @@
 import '../styles/main.scss';
 
 
-// Component(s)
+// Module(s)
+import React from 'react';
+import ReactDOM from 'react-dom';
 
+// Component(s)
+// import Counter from './components/counter.jsx';
 
 // Utilities
 import * as NoJs from './utils/noJS';
