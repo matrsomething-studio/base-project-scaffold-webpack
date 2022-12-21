@@ -3,11 +3,12 @@ const path = require('path');
 
 
 // Plugins
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const HandlebarsPlugin = require('handlebars-webpack-plugin');
 const HandlebarsLayouts = require('handlebars-layouts');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+
 
 // Config
 module.exports = {
