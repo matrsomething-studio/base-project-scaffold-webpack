@@ -7,7 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const HandlebarsPlugin = require('handlebars-webpack-plugin');
 const HandlebarsLayouts = require('handlebars-layouts');
-
+const TerserPlugin = require('terser-webpack-plugin');
 
 // Config
 module.exports = {
@@ -19,40 +19,49 @@ module.exports = {
     mode: 'production',
     module: {
         rules: [{
-            test: /\.(scss)$/,
-            use: [
-                MiniCssExtractPlugin.loader,
-                'css-loader',
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        postcssOptions: {
-                            plugins: () => [
-                                require('autoprefixer')
-                            ]
+                test: /\.(scss)$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: () => [
+                                    require('autoprefixer')
+                                ]
+                            }
                         }
+                    },
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        cacheDirectory: true,
+                        cacheCompression: false,
+                        envName: 'production'
                     }
-                },
-                'sass-loader'
-            ]
-        }, 
-        {
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    cacheDirectory: true,
-                    cacheCompression: false,
-                    envName: 'production'
                 }
             }
-        }]
+        ]
     },
     resolve: {
         extensions: ['.js', '.jsx']
     },
     plugins: [
+        new TerserPlugin({
+            terserOptions: {
+              format: {
+                comments: false,
+              },
+            },
+            extractComments: false,
+          }),
         new CopyPlugin({
             patterns: [{
                 from: './assets',
