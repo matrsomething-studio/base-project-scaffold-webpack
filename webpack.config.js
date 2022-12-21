@@ -57,12 +57,12 @@ module.exports = {
     plugins: [
         new TerserPlugin({
             terserOptions: {
-              format: {
-                comments: false,
-              },
+                format: {
+                    comments: false,
+                },
             },
             extractComments: false,
-          }),
+        }),
         new CopyPlugin({
             patterns: [{
                 from: './assets',
