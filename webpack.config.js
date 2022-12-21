@@ -35,7 +35,22 @@ module.exports = {
                 },
                 'sass-loader'
             ]
+        }, 
+        {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    cacheDirectory: true,
+                    cacheCompression: false,
+                    envName: 'production'
+                }
+            }
         }]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']
     },
     plugins: [
         new CopyPlugin({
