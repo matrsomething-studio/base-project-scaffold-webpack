@@ -6,7 +6,7 @@
 		"commit-checkpoint": "git add . && git commit -m 'dev: checkpoint' && git push",
 		"clean": "rm -rf dist/*",
 		"build": "npm run clean && webpack",
-		"serve": "webpack serve --mode development"
+		"serve": "webpack serve --mode development && open http://localhost:8080/"
 	},
 	"keywords": [],
 	"author": "",
