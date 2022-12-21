@@ -3,13 +3,10 @@
 	"description": "The PROJECT-NAME-GOES-HERE project.",
 	"version": "1.0.0",
 	"scripts": {
-		"preview": "open http://localhost:9090/",
-		"serve": "npm run preview && cd dist/ && python -m SimpleHTTPServer 9090",
 		"commit-checkpoint": "git add . && git commit -m 'dev: checkpoint' && git push",
 		"clean": "rm -rf dist/*",
 		"build": "npm run clean && webpack",
-		"watch": "",
-		"start": "webpack serve --mode development"
+		"serve": "webpack serve --mode development"
 	},
 	"keywords": [],
 	"author": "",
@@ -32,10 +29,7 @@
 		"webpack-dev-server": "3.11.0"
 	},
 	"dependencies": {
-		"@dogstudio/highway": "^2.2.1",
 		"bootstrap": "^4.4.1",
-		"gsap": "^3.5.1",
-		"imagesloaded": "^4.1.4",
-		"locomotive-scroll": "^4.0.6"
+		"imagesloaded": "^4.1.4"
 	}
 }

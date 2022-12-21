@@ -4,13 +4,7 @@
 
 ## Local Preview
 ---
-A basic HTTP server can be enabled for local previewing. Server side languages and redirect functionality such as `PHP` and `.htaccess` rules will not work as expected:
-
-**Steps to run:**
-
-1. `cd` into the root directory
-2. Run `npm run serve`
-3. Open `http://localhost:9090/` in browser of choice
+TBD
 
 ## Stage Preview
 ---
@@ -38,12 +32,7 @@ N/A
 
 ## Dev Dependencies
 ---
-All packages have been checked for upgrades and updated. Gulp however needs to remain at `"^3.9.1"` as latest release breaks the build system.
-
-**Notes:**
-
-- Stack Overflow (https://stackoverflow.com/questions/27024431/updating-gulp-plugins)
-- NPMJS: npm-check-updates (https://www.npmjs.com/package/npm-check-updates)
+TBD
 
 **Steps to run:**
 

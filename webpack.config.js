@@ -21,10 +21,18 @@ module.exports = {
         rules: [{
             test: /\.(scss)$/,
             use: [
-                'style-loader',
                 MiniCssExtractPlugin.loader,
                 'css-loader',
-                'postcss-loader',
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        postcssOptions: {
+                            plugins: () => [
+                                require('autoprefixer')
+                            ]
+                        }
+                    }
+                },
                 'sass-loader'
             ]
         }]

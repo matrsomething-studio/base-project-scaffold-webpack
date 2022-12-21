@@ -1,13 +1,18 @@
 'use strict';
 
-import 'bootstrap';
+// Style(s)
 import '../styles/main.scss';
-
-// Module(s)
-import * as NoJs from './modules/noJS';
 
 
 // Component(s)
+
+
+
+// Utilities
+import * as NoJs from './utils/noJS';
+
+
+
 
 
 // Main
