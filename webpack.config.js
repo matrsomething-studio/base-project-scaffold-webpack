@@ -46,19 +46,16 @@ module.exports = {
         }),
         new HandlebarsPlugin({
             entry: path.join(process.cwd(), 'src', 'hbs', '**', 'index*.{html,hbs}'),
-            output: path.join(process.cwd(), 'dist', '[name].html'),
+            output: path.join(process.cwd(), 'dist', '[path]', '[name].html'),
             data: require('./data/config.json'),
             partials: [
-                path.join(process.cwd(), 'src', 'hbs', '*', '*', '*.hbs')
+                path.join(process.cwd(), 'src', 'hbs', '**', '*.hbs')
             ],
             helpers: {
-                projectHelpers: path.join(process.cwd(), 'app', 'helpers', '*.helper.js')
+                projectHelpers: path.join(process.cwd(), 'src', 'helpers', '*.helper.js')
             },
             onBeforeSetup: function(Handlebars) {
                 Handlebars.registerHelper(HandlebarsLayouts(Handlebars));
-            },
-            onBeforeAddPartials: function (Handlebars, partialsMap) {
-                console.dir(partialsMap);
             }
         }),
         new MiniCssExtractPlugin({
