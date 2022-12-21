@@ -67,7 +67,10 @@ module.exports = {
             patterns: [{
                 from: './assets',
                 to: './'
-            }, ]
+            }, {
+                from: './src/api',
+                to: './api'
+            }]
         }),
         new HandlebarsPlugin({
             entry: path.join(process.cwd(), 'src', 'hbs', '**', 'index*.{html,hbs}'),
