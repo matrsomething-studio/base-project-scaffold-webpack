@@ -24,7 +24,8 @@ module.exports = {
                 'style-loader', 
                 MiniCssExtractPlugin.loader, 
                 'css-loader',
-                'sass-loader' // envoked top > botton
+                'postcss-loader',
+                'sass-loader'
             ]
         }]
     },
