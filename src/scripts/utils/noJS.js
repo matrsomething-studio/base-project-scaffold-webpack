@@ -1,5 +1,3 @@
-'use strict';
-
 // DOM
 const HTML = document.querySelector('html');
 

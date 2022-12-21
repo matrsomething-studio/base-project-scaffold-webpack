@@ -1,5 +1,3 @@
-'use strict';
-
 // return common keyboard codes
 const codex = {
 	up: 38,

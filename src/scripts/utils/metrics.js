@@ -1,5 +1,3 @@
-'use strict';
-
 // return total height of page
 const getPageHeight = () => {
 	let body = document.body;

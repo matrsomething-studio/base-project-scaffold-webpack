@@ -1,5 +1,3 @@
-'use strict';
-
 // Lib(s)
 import imagesLoaded from 'imagesloaded';
 

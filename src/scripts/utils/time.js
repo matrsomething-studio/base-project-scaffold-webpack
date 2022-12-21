@@ -1,5 +1,3 @@
-'use strict';
-
 // Set debounce delay and action (https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf)
 const debounce = (func, delay) => {
 	let inDebounce;

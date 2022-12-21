@@ -7,12 +7,8 @@ import '../styles/main.scss';
 // Component(s)
 
 
-
 // Utilities
 import * as NoJs from './utils/noJS';
-
-
-
 
 
 // Main
