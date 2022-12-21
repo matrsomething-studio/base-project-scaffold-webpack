@@ -3,7 +3,6 @@ const path = require('path');
 
 
 // Plugins
-const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const HandlebarsPlugin = require('handlebars-webpack-plugin');
@@ -17,32 +16,24 @@ module.exports = {
         filename: 'assets/built/scripts/main.built.js',
         path: path.resolve(__dirname, './dist')
     },
-    mode: 'none',
+    devServer: {
+        static: path.resolve(__dirname, 'dist'),
+        port: 8080,
+        hot: true
+    },
+    mode: 'production',
     module: {
         rules: [{
-                test: /\.css$/,
-                use: [
-                    // 'style-loader', 
-                    MiniCssExtractPlugin.loader,
-                    'css-loader'
-                ]
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    // 'style-loader', 
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader' // envoked top > botton
-                ]
-            }
-        ]
+            test: /\.(scss)$/,
+            use:  [
+                'style-loader', 
+                MiniCssExtractPlugin.loader, 
+                'css-loader',
+                'sass-loader' // envoked top > botton
+            ]
+        }]
     },
     plugins: [
-        new TerserPlugin(),
-        new MiniCssExtractPlugin({
-            filename: 'assets/built/styles/main.built.css'
-        }),
         new CopyPlugin({
             patterns: [{
                 from: './assets',
@@ -62,6 +53,9 @@ module.exports = {
             onBeforeSetup: function(Handlebars) {
                 Handlebars.registerHelper(HandlebarsLayouts(Handlebars));
             }
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'assets/built/styles/main.built.css'
         })
     ]
 };
