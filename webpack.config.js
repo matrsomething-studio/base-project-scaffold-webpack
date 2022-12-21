@@ -13,7 +13,7 @@ const HandlebarsLayouts = require('handlebars-layouts');
 module.exports = {
     entry: './src/scripts/main.js',
     output: {
-        filename: 'assets/built/scripts/main.built.js',
+        filename: 'assets/built/scripts/[name].built.js',
         path: path.resolve(__dirname, './dist')
     },
     mode: 'production',
@@ -59,7 +59,7 @@ module.exports = {
             }
         }),
         new MiniCssExtractPlugin({
-            filename: 'assets/built/styles/main.built.css'
+            filename: 'assets/built/styles/[name].built.css'
         })
     ]
 };
