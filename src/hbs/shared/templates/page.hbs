@@ -1,58 +1,58 @@
 <!DOCTYPE html>
-    {{#block "doctype"}}
-        <html xml:lang="{{metadata.locale.lang}}-{{metadata.locale.country}}" lang="{{metadata.locale.lang}}-{{metadata.locale.country}}" prefix="og: http://ogp.me/ns#" class="no-js">
-    {{/block}}
+	{{#block "doctype"}}
+		<html xml:lang="{{metadata.locale.lang}}-{{metadata.locale.country}}" lang="{{metadata.locale.lang}}-{{metadata.locale.country}}" prefix="og: http://ogp.me/ns#" class="no-js">
+	{{/block}}
 
-    {{#block "head"}}
-        <head>
-            {{#if metadata.notIndex}}
-                <meta name="robots" content="noindex, nofollow"/>
-            {{/if}}
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-            <link rel="canonical" href="{{metadata.url}}">
-            <title>{{#block "head:title"}}Welcome{{/block}} - {{metadata.title}}</title>
-            {{#block "head:meta:share"}}
-                <meta name="description" content="{{metadata.description}}">
-                <meta property="og:title" content="{{metadata.title}}">
-                <meta property="og:description" content="{{metadata.description}}">
-                <meta property="og:url" content="{{metadata.url}}">
-                <meta property="og:locale" content="{{metadata.locale.lang}}_{{metadata.locale.country}}">
-                <meta property="og:image" content="{{metadata.url}}assets/images/meta/og.png">
-                <meta property="og:type" content="website">
-                <meta property="og:site_name" content="{{metadata.title}}">
-                <meta name="twitter:site" content="@{{metadata.meta-title}}">
-                <meta name="twitter:card" content="summary_large_image">
-            {{/block}}
-            {{#block "head:styles"}}
-                <link href="{{metadata.assets}}/assets/built/styles/main.built.css" rel="stylesheet">
-            {{/block}}
-        </head>
-    {{/block}}
+	{{#block "head"}}
+		<head>
+			{{#if metadata.notIndex}}
+				<meta name="robots" content="noindex, nofollow"/>
+			{{/if}}
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+			<link rel="canonical" href="{{metadata.url}}">
+			<title>{{#block "head:title"}}Welcome{{/block}} - {{metadata.title}}</title>
+			{{#block "head:meta:share"}}
+				<meta name="description" content="{{metadata.description}}">
+				<meta property="og:title" content="{{metadata.title}}">
+				<meta property="og:description" content="{{metadata.description}}">
+				<meta property="og:url" content="{{metadata.url}}">
+				<meta property="og:locale" content="{{metadata.locale.lang}}_{{metadata.locale.country}}">
+				<meta property="og:image" content="{{metadata.url}}assets/images/meta/og.png">
+				<meta property="og:type" content="website">
+				<meta property="og:site_name" content="{{metadata.title}}">
+				<meta name="twitter:site" content="@{{metadata.meta-title}}">
+				<meta name="twitter:card" content="summary_large_image">
+			{{/block}}
+			{{#block "head:styles"}}
+				<link href="{{metadata.assets}}/assets/built/styles/main.built.css" rel="stylesheet">
+			{{/block}}
+		</head>
+	{{/block}}
 
-    {{#block "body"}}
-        <body class="page {{#block "body:class"}}{{/block}}">
-            {{#block "body:header"}}
-                <header id="header" role="contentinfo">
-                    {{> "partials/partial-name"}}
-                </header>
-            {{/block}}
+	{{#block "body"}}
+		<body class="page {{#block "body:class"}}{{/block}}">
+			{{#block "body:header"}}
+				<header id="header" role="contentinfo">
+					{{> "partials/partial-name"}}
+				</header>
+			{{/block}}
 
-            {{#block "body:main"}}
-                <main id="main" role="main">
-                    {{#block "body:main:content"}}{{/block}}
-                </main>
-            {{/block}}
+			{{#block "body:main"}}
+				<main id="main" role="main">
+					{{#block "body:main:content"}}{{/block}}
+				</main>
+			{{/block}}
 
-            {{#block "body:footer"}}
-                <footer id="footer" role="contentinfo">
-                    {{> "partials/partial-name"}}
-                </footer>
-            {{/block}}
+			{{#block "body:footer"}}
+				<footer id="footer" role="contentinfo">
+					{{> "partials/partial-name"}}
+				</footer>
+			{{/block}}
 
-            {{#block "body:scripts"}}
-                <script src="{{metadata.assets}}/assets/built/scripts/main.built.js" defer></script>
-            {{/block}}
-        </body>
-    {{/block}}
+			{{#block "body:scripts"}}
+				<script src="{{metadata.assets}}/assets/built/scripts/main.built.js" defer></script>
+			{{/block}}
+		</body>
+	{{/block}}
 </html>
