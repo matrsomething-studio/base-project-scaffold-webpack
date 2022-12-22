@@ -4,8 +4,8 @@ const path = require('path');
 
 // Plugins
 const CopyPlugin = require("copy-webpack-plugin");
-const HandlebarsPlugin = require('handlebars-webpack-plugin');
 const HandlebarsLayouts = require('handlebars-layouts');
+const HandlebarsPlugin = require('handlebars-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -55,14 +55,6 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
     plugins: [
-        new TerserPlugin({
-            terserOptions: {
-                format: {
-                    comments: false,
-                },
-            },
-            extractComments: false,
-        }),
         new CopyPlugin({
             patterns: [{
                 from: './assets',
@@ -88,6 +80,14 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: 'assets/built/styles/[name].built.css'
+        }),
+        new TerserPlugin({
+            terserOptions: {
+                format: {
+                    comments: false,
+                },
+            },
+            extractComments: false,
         })
     ]
 };

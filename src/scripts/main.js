@@ -24,8 +24,7 @@ const Main = (function() {
     };
 
     const renderReact = () => {
-        const rootElement = document.getElementById('app');
-        const root = ReactDOM.createRoot(rootElement);
+        const root = ReactDOM.createRoot(document.getElementById('app'));
         root.render(<Counter />);
     };
 
