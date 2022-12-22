@@ -4,12 +4,12 @@
 	"version": "1.0.0",
 	"scripts": {
 		"build": "npm run clean && webpack",
-		"commit-checkpoint": "git add . && git commit -m 'dev: checkpoint' && git push",
 		"clean": "rm -rf dist/*",
-		"serve": "webpack serve --mode development && open http://localhost:8080/"
+		"commit-checkpoint": "git add . && git commit -m 'dev: checkpoint' && git push",
+		"serve": "webpack serve --mode development"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "matrsomething-studio",
 	"license": "ISC",
 	"registry": "https://registry.npmjs.org/",
 	"devDependencies": {

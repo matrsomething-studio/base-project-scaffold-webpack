@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom/client';
 
 
 // Component(s)
-import Counter from './components/counter.jsx';
+import Counter from './components/counter';
 
 
 // Utilities
@@ -24,12 +24,13 @@ const Main = (function() {
     };
 
     const renderReact = () => {
+        console.log('Rendering react components...');
         const root = ReactDOM.createRoot(document.getElementById('app'));
         root.render(<Counter />);
     };
 
     const init = () => {
-        NoJs.init();
+        console.log('Initializing main...');
         bindEvents();
         renderReact();
     };
@@ -44,6 +45,8 @@ const Main = (function() {
 // Load Scripts
 document.addEventListener('readystatechange', e => {
     if (e.target.readyState === 'complete') {
+        console.log('Browser is ready...');
+        NoJs.init();
         Main.init();
     }
 });
