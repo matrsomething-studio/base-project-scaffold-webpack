@@ -30,7 +30,7 @@ const Main = (function() {
     };
 
     const init = () => {
-        console.log('Initializing main...');
+        console.log('Initializing Main...');
         bindEvents();
         renderReact();
     };
