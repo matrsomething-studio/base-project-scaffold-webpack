@@ -4,15 +4,15 @@
 import '../styles/main.scss';
 
 
-// Module(s)
+// Utilities
+import * as NoJs from './utils/noJS';
 
 
 // Component(s)
 import * as ThreeExample from './components/ThreeExample';
 
 
-// Utilities
-import * as NoJs from './utils/noJS';
+// Module(s)
 
 
 // Main

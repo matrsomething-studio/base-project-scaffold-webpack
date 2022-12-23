@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "npm run clean && webpack",
 		"clean": "rm -rf dist/*",
-		"commit-checkpoint": "git add . && git commit -m 'dev: checkpoint' && git push",
+		"commit-check": "git add . && git commit -m 'dev: checkpoint' && git push",
 		"serve": "webpack serve --mode development"
 	},
 	"keywords": [],
