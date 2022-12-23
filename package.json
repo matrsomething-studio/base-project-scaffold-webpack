@@ -2,6 +2,7 @@
 	"name": "project-name-goes-here",
 	"description": "The PROJECT-NAME-GOES-HERE project.",
 	"version": "1.0.0",
+	"main": "src/index.js",
 	"scripts": {
 		"build": "npm run clean && webpack",
 		"clean": "rm -rf dist/*",
@@ -40,8 +41,13 @@
 		"webpack-dev-server": "3.11.0"
 	},
 	"dependencies": {
+		"@react-three/drei": "^9.48.1",
+		"@react-three/fiber": "^8.9.1",
+		"@types/three": "^0.146.0",
 		"bootstrap": "^5.2.3",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"react-spring": "^9.6.1",
+		"three": "^0.148.0"
 	}
 }

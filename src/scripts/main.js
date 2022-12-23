@@ -3,14 +3,10 @@
 // Style(s)
 import '../styles/main.scss';
 
-
 // Module(s)
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-
 
 // Component(s)
-import Counter from './components/counter';
+import * as ThreeExample from './components/ThreeExample';
 
 
 // Utilities
@@ -25,8 +21,7 @@ const Main = (function() {
 
     const renderReact = () => {
         console.log('Rendering react components...');
-        const root = ReactDOM.createRoot(document.getElementById('app'));
-        root.render(<Counter />);
+        ThreeExample.init();
     };
 
     const init = () => {
