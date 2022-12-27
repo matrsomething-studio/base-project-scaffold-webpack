@@ -1,6 +1,8 @@
 import { createRoot } from 'react-dom/client'
 import React, { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+import { SSAOPass } from "three-stdlib"
 
 function Box(props) {
   // This reference will give us direct access to the mesh
@@ -11,7 +13,7 @@ function Box(props) {
   const [active, setActive] = useState(false)
   
   // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => (mesh.current.rotation.x += delta))
+  useFrame((state, delta) => (mesh.current.rotation.x += delta));
   
   // Return view, these are regular three.js elements expressed in JSX
   return (
@@ -35,6 +37,7 @@ const init = () => {
         <pointLight position={[10, 10, 10]} />
         <Box position={[-1.2, 0, 0]} />
         <Box position={[1.2, 0, 0]} />
+        <OrbitControls autoRotate autoRotateSpeed={0.1} enablePan={false} enableZoom={false}/>
       </Canvas>,
     )
 };
